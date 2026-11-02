@@ -79,41 +79,36 @@ The workpiece displays the final result with exactly two holes after Robot 2 com
 
 ![Workpiece with Two Holes](images/two_hole_workpiece.png)
 
-### 6. Second Workpiece After Drilling
-
-![Second Workpiece After Drilling](images/second_workpiece_after_drilling.png)
-
-### 7. Robot 2 Returns to HOME Position
+### 6. Robot 2 Returns to HOME Position
 
 After completing the drilling sequence, Robot 2 returns to its HOME position.
 
 ![Robot 2 HOME Position](images/robot2_home_position.png)
 
-### 8. Robot 1 Picks the Drilled Workpiece
+### 7. Robot 1 Picks the Drilled Workpiece
 
 After receiving the drilling completion signal, Robot 1 starts the pick-and-place operation.
 
 ![Robot 1 Picking Drilled Workpiece](images/robot1_pick_drilled_workpiece.png)
 
-### 9. Robot 1 – Pick Operation
+### 8. Robot 1 – Pick Operation
 
 ![Robot Picking Workpiece](images/robot_pick_operation.png)
 
-### 10. Workpiece Placement into Collection Trolley
+### 9. Workpiece Placement into Collection Trolley
 
 Robot 1 transports the processed workpiece and releases it into the collection trolley.
 
 ![Robot Placing Workpiece](images/robot_trolley_placement.png)
 
-### 11. Completed Pick-and-Place Operation
+### 10. Completed Pick-and-Place Operation
 
 ![Completed Pick and Place](images/completed_pick_place.png)
 
-### 12. Repeated Workpiece Handling
+### 11. Second Workpiece After Drilling
 
-The system continues the automated cycle with subsequent workpieces.
+![Second Workpiece After Drilling](images/second_workpiece_after_drilling.png)
 
-![Second Workpiece Pick](images/second_piece_pick.png)
 
 ---
 
