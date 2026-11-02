@@ -61,61 +61,55 @@ The following screenshots show the simulation and automated operations in sequen
 
 ![Assembly Line Startup](images/assembly_line_start.png)
 
-### 3. Conveyor-Based Workpiece Transportation
-
-The conveyor transports workpieces toward the sensor detection area.
-
-![Workpiece Arriving on Conveyor](images/second_workpiece_come.png)
-
-### 4. Robot 2 – First Drilling Operation
+### 3. Robot 2 – First Drilling Operation
 
 Robot 2 moves toward the first designated drilling position.
 
 ![First Drilling Operation](images/drilling_first_hole.png)
 
-### 5. Robot 2 – Second Drilling Operation
+### 4. Robot 2 – Second Drilling Operation
 
 After completing the first drilling motion, Robot 2 moves to the second designated drilling position.
 
 ![Second Drilling Operation](images/drilling_second_hole.png)
 
-### 6. Workpiece After Two-Point Drilling
+### 5. Workpiece After Two-Point Drilling
 
 The workpiece displays the final result with exactly two holes after Robot 2 completes both drilling operations.
 
 ![Workpiece with Two Holes](images/two_hole_workpiece.png)
 
-### 7. Second Workpiece After Drilling
+### 6. Second Workpiece After Drilling
 
 ![Second Workpiece After Drilling](images/second_workpiece_after_drilling.png)
 
-### 8. Robot 2 Returns to HOME Position
+### 7. Robot 2 Returns to HOME Position
 
 After completing the drilling sequence, Robot 2 returns to its HOME position.
 
 ![Robot 2 HOME Position](images/robot2_home_position.png)
 
-### 9. Robot 1 Picks the Drilled Workpiece
+### 8. Robot 1 Picks the Drilled Workpiece
 
 After receiving the drilling completion signal, Robot 1 starts the pick-and-place operation.
 
 ![Robot 1 Picking Drilled Workpiece](images/robot1_pick_drilled_workpiece.png)
 
-### 10. Robot 1 – Pick Operation
+### 9. Robot 1 – Pick Operation
 
 ![Robot Picking Workpiece](images/robot_pick_operation.png)
 
-### 11. Workpiece Placement into Collection Trolley
+### 10. Workpiece Placement into Collection Trolley
 
 Robot 1 transports the processed workpiece and releases it into the collection trolley.
 
 ![Robot Placing Workpiece](images/robot_trolley_placement.png)
 
-### 12. Completed Pick-and-Place Operation
+### 11. Completed Pick-and-Place Operation
 
 ![Completed Pick and Place](images/completed_pick_place.png)
 
-### 13. Repeated Workpiece Handling
+### 12. Repeated Workpiece Handling
 
 The system continues the automated cycle with subsequent workpieces.
 
