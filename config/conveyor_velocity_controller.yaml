@@ -1,0 +1,5 @@
+/**:
+  ros__parameters:
+    joints:
+      - front_roller_joint
+      - rear_roller_joint

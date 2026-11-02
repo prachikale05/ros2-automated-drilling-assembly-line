@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+
+<sdf version="1.6">
+
+  <model name="conveyor">
+
+    <static>false</static>
+
+    <!-- ================================================= -->
+    <!-- ROOT -->
+    <!-- ================================================= -->
+
+    <link name="conveyor_base">
+      <pose>0 0 0 0 0 0</pose>
+    </link>
+
+
+    <!-- ================================================= -->
+    <!-- LEFT FRAME -->
+    <!-- ================================================= -->
+
+    <link name="left_frame">
+
+      <pose>0 0.35 0.4 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>4.0 0.1 0.8</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>4.0 0.1 0.8</size>
+          </box>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <!-- ================================================= -->
+    <!-- RIGHT FRAME -->
+    <!-- ================================================= -->
+
+    <link name="right_frame">
+
+      <pose>0 -0.35 0.4 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>4.0 0.1 0.8</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>4.0 0.1 0.8</size>
+          </box>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <!-- ================================================= -->
+    <!-- BELT -->
+    <!-- ================================================= -->
+
+    <link name="belt">
+
+      <pose>0 0 0.82 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>4.0 0.7 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+
+        <geometry>
+          <box>
+            <size>4.0 0.7 0.1</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>0.05 0.05 0.05 1</ambient>
+          <diffuse>0.05 0.05 0.05 1</diffuse>
+        </material>
+
+      </visual>
+
+    </link>
+
+
+    <!-- ================================================= -->
+    <!-- FRONT ROLLER -->
+    <!-- ================================================= -->
+
+    <link name="front_roller">
+
+      <pose>-1.85 0 0.88 1.5708 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.12</radius>
+            <length>0.72</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.12</radius>
+            <length>0.72</length>
+          </cylinder>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <!-- ================================================= -->
+    <!-- REAR ROLLER -->
+    <!-- ================================================= -->
+
+    <link name="rear_roller">
+
+      <pose>1.85 0 0.88 1.5708 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.12</radius>
+            <length>0.72</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.12</radius>
+            <length>0.72</length>
+          </cylinder>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <!-- ================================================= -->
+    <!-- LEGS -->
+    <!-- ================================================= -->
+
+    <link name="left_front_leg">
+
+      <pose>-1.4 0.35 0.15 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.3</size>
+          </box>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <link name="left_rear_leg">
+
+      <pose>1.4 0.35 0.15 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.3</size>
+          </box>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <link name="right_front_leg">
+
+      <pose>-1.4 -0.35 0.15 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.3</size>
+          </box>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <link name="right_rear_leg">
+
+      <pose>1.4 -0.35 0.15 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.3</size>
+          </box>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+    <!-- ================================================= -->
+    <!-- FIXED STRUCTURAL JOINTS -->
+    <!-- ================================================= -->
+
+    <joint name="left_frame_joint" type="fixed">
+      <parent>conveyor_base</parent>
+      <child>left_frame</child>
+    </joint>
+
+    <joint name="right_frame_joint" type="fixed">
+      <parent>conveyor_base</parent>
+      <child>right_frame</child>
+    </joint>
+
+    <joint name="belt_joint" type="fixed">
+      <parent>conveyor_base</parent>
+      <child>belt</child>
+    </joint>
+
+    <joint name="left_front_leg_joint" type="fixed">
+      <parent>conveyor_base</parent>
+      <child>left_front_leg</child>
+    </joint>
+
+    <joint name="left_rear_leg_joint" type="fixed">
+      <parent>conveyor_base</parent>
+      <child>left_rear_leg</child>
+    </joint>
+
+    <joint name="right_front_leg_joint" type="fixed">
+      <parent>conveyor_base</parent>
+      <child>right_front_leg</child>
+    </joint>
+
+    <joint name="right_rear_leg_joint" type="fixed">
+      <parent>conveyor_base</parent>
+      <child>right_rear_leg</child>
+    </joint>
+
+
+    <!-- ================================================= -->
+    <!-- MOVABLE ROLLER JOINTS -->
+    <!-- ================================================= -->
+
+    <joint name="front_roller_joint" type="revolute">
+
+      <parent>conveyor_base</parent>
+      <child>front_roller</child>
+
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+
+    </joint>
+
+
+    <joint name="rear_roller_joint" type="revolute">
+
+      <parent>conveyor_base</parent>
+      <child>rear_roller</child>
+
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+
+    </joint>
+
+  </model>
+
+</sdf>

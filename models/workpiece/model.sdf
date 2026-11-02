@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<sdf version="1.6">
+
+  <model name="workpiece">
+
+    <static>false</static>
+
+    <link name="workpiece_link">
+
+      <pose>0 0 0.15 0 0 0</pose>
+
+      <inertial>
+        <mass>0.5</mass>
+
+        <inertia>
+          <ixx>0.002</ixx>
+          <iyy>0.002</iyy>
+          <izz>0.002</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+
+        <geometry>
+          <box>
+            <size>0.3 0.3 0.3</size>
+          </box>
+        </geometry>
+        
+       <surface>
+        <friction>
+          <ode>
+            <mu>5.0</mu>
+            <mu2>5.0</mu2>
+          </ode>
+        </friction>
+
+        <contact>
+          <ode>
+            <kp>1000000</kp>
+            <kd>1000</kd>
+            <max_vel>0.01</max_vel>
+            <min_depth>0.001</min_depth>
+          </ode>
+        </contact>
+      </surface>
+
+      </collision>
+
+      <!-- Original solid workpiece: visible initially -->
+      <visual name="solid_visual">
+        <geometry>
+          <box>
+            <size>0.3 0.3 0.3</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.65 0.68 0.72 1</ambient>
+          <diffuse>0.82 0.85 0.90 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <shininess>80</shininess>
+        </material>
+        <transparency>0</transparency>
+      </visual>
+      
+      <!-- Drilled workpiece: hidden initially -->
+      <visual name="drilled_visual">
+          <geometry>
+              <mesh>
+                  <uri>model://workpiece/workpiece_with_two_holes.stl</uri>
+                  <scale>0.001 0.001 0.001</scale>
+              </mesh>
+          </geometry>
+          <material>
+              <ambient>0.65 0.68 0.72 1</ambient>
+              <diffuse>0.82 0.85 0.90 1</diffuse>
+              <specular>0.8 0.8 0.8 1</specular>
+              <shininess>80</shininess>
+          </material>
+          <transparency>1</transparency>
+      </visual>
+
+
+    </link>
+    <plugin name="gripper_hold_plugin"
+        filename="libgripper_hold_plugin.so"/>
+
+  </model>
+
+</sdf>

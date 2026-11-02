@@ -1,0 +1,50 @@
+# ROS 2 and Python generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# ROS 2 workspace build artifacts
+build/
+install/
+log/
+
+# Local editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+
+# Local backup files
+*.backup
+*.backup2
+*.backup_color
+*.before_*
+
+# Robot description backup and debugging files
+*.backup_gripper
+*.corrupted
+*.freefloating_backup
+
+# Additional temporary and backup files
+*.accuracy_backup
+*.working_backup
+*.bak
+
+# Intermediate geometry experiments
+models/workpiece/geometry/
+
+# Compiled plugin binaries and object files
+*.so
+*.so.*
+*.o
+*.a
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# Temporary editor and development files
+*.tmp
+*.swp
+*.swo
+*~

@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+
+<sdf version="1.6">
+
+  <model name="workstation1">
+
+    <static>true</static>
+
+    <!-- ========================= -->
+    <!-- WORKSTATION BASE -->
+    <!-- ========================= -->
+
+    <link name="station_base">
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>2.5 2.2 0.15</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>2.5 2.2 0.15</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>0.25 0.25 0.25 1</ambient>
+          <diffuse>0.25 0.25 0.25 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+
+
+    <!-- ========================= -->
+    <!-- ROBOT PEDESTAL -->
+    <!-- ========================= -->
+
+    <link name="robot_pedestal">
+
+      <pose>0 0.65 0.65 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.35</radius>
+            <length>1.0</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.35</radius>
+            <length>1.0</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0.35 0.35 0.35 1</ambient>
+          <diffuse>0.35 0.35 0.35 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+
+
+    <!-- ========================= -->
+    <!-- BACK SAFETY FENCE -->
+    <!-- ========================= -->
+
+    <link name="back_fence">
+
+      <pose>0 -0.95 1.25 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>2.5 0.08 2.2</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>2.5 0.08 2.2</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>0.7 0.7 0.1 1</ambient>
+          <diffuse>0.7 0.7 0.1 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+
+
+    <!-- ========================= -->
+    <!-- LEFT SAFETY FENCE -->
+    <!-- ========================= -->
+
+    <link name="left_fence">
+
+      <pose>-1.2 -0.15 1.25 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.08 1.6 2.2</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.08 1.6 2.2</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>0.7 0.7 0.1 1</ambient>
+          <diffuse>0.7 0.7 0.1 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+
+
+    <!-- ========================= -->
+    <!-- RIGHT SAFETY FENCE -->
+    <!-- ========================= -->
+
+    <link name="right_fence">
+
+      <pose>1.2 -0.15 1.25 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.08 1.6 2.2</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.08 1.6 2.2</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>0.7 0.7 0.1 1</ambient>
+          <diffuse>0.7 0.7 0.1 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+
+
+    <!-- ========================= -->
+    <!-- TOP SAFETY BEAM -->
+    <!-- ========================= -->
+
+    <link name="top_beam">
+
+      <pose>0 -0.95 2.3 0 0 0</pose>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>2.5 0.08 0.08</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient>
+          <diffuse>0.1 0.1 0.1 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+
+
+    <!-- ========================= -->
+    <!-- WORKSTATION TABLE -->
+    <!-- ========================= -->
+
+    <link name="work_table">
+
+      <pose>0 -0.15 1.0 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1.2 0.8 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>1.2 0.8 0.1</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+
+  </model>
+
+</sdf>
