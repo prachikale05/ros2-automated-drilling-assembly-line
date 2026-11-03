@@ -80,7 +80,7 @@ $$
 
 Watch the complete simulation demonstrating the coordinated operation of both robots, sensor-based workpiece detection, two-point drilling, and automated pick-and-place.
 
-▶️ **[Watch Full Project Demonstration](automated_drilling_assembly_line_demo.mp4)**
+https://github.com/user-attachments/assets/1714dd40-daaa-4a54-b3a6-4388ba810e7e
 
 ---
 
