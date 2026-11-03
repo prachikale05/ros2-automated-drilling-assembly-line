@@ -105,7 +105,10 @@ Robot 1 transports the processed workpiece and releases it into the collection t
 
 ![Completed Pick and Place](images/completed_pick_place.png)
 
-### 11. Second Workpiece After Drilling
+### 11. Second Workpiece Come for Drilling
+![Second Workpiece Come for Drilling]((images/second_workpiece.png)
+
+### 12. Second Workpiece After Drilling
 
 ![Second Workpiece After Drilling](images/second_workpiece_after_drilling.png)
 
