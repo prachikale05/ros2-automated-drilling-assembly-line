@@ -14,7 +14,7 @@ Two coordinated industrial robots work together:
 ## 📑 Table of Contents
 
 - [Highlights](#-highlights)
-- [Performance](#-performance)
+- [Drilling Position Accuracy](#-drilling-position-accuracy)
 - [Project Demonstration](#-project-demonstration)
 - [System Workflow](#-system-workflow)
 - [ROS 2 Communication](#-ros-2-communication)
@@ -24,6 +24,9 @@ Two coordinated industrial robots work together:
 - [Project Structure](#-project-structure)
 - [Simulation Note](#-simulation-note)
 - [Project Objective](#-project-objective)
+- [Future Improvements](#-future-improvements)
+- [Author](#-author)
+- [License](#-license)
 
 ---
 
@@ -32,6 +35,7 @@ Two coordinated industrial robots work together:
 - Two coordinated industrial robots working in a single simulated cell.
 - Conveyor transport with sensor-based workpiece detection and automatic stopping.
 - Automated **two-point drilling** by Robot 2, followed by a return to its HOME position.
+- Average simulated drill-tip position error of **0.00806 mm (8.06 µm)** across both drilling points.
 - Signal-based coordination between drilling completion and pick-and-place.
 - Gripper-controlled pickup and release by Robot 1 using a custom C++ Gazebo plugin.
 - Automatic placement into a collection trolley.
@@ -39,17 +43,46 @@ Two coordinated industrial robots work together:
 
 ---
 
-## 📊 Performance
+## 📊 Drilling Position Accuracy
 
-| Metric | Result |
-|---|---|
-| **Drilling accuracy** | **94%** |
+The drilling accuracy was evaluated by comparing the **actual drill-tip coordinates** reached by Robot 2 with the **predefined target coordinates** at both drilling points. The positional error is the Euclidean distance between the two:
 
-Drilling accuracy is tracked with the `position_accuracy_monitor.py` node, which compares the drill position reached by Robot 2 against the target drilling points.
+$$
+e = \sqrt{(x_a - x_t)^2 + (y_a - y_t)^2 + (z_a - z_t)^2}
+$$
+
+where $(x_t, y_t, z_t)$ is the target position and $(x_a, y_a, z_a)$ is the position actually reached by the drill tip. Coordinates are in metres.
+
+### Measured Coordinates
+
+| Drilling Point | Target (x, y, z) | Actual (x, y, z) |
+|---|---|---|
+| Point 1 | (-0.2175, 0.0800, 1.0200) | (-0.21750223, 0.08000315, 1.01999364) |
+| Point 2 | (-0.0575, -0.0800, 1.0200) | (-0.05750233, -0.07999692, 1.01999222) |
+
+### Results
+
+| Drilling Point | Position Error |
+|---|---:|
+| Point 1 | 0.00744 mm |
+| Point 2 | 0.00868 mm |
+| **Average Position Error** | **0.00806 mm (8.06 µm)** |
+
+$$
+e_{avg} = \frac{0.00744 + 0.00868}{2} = 0.00806 \text{ mm}
+$$
+
+> **Note:** These are *simulated drill-tip position errors* and not a measurement of physical hole accuracy. They show how closely Robot 2 reaches the commanded drilling targets in simulation.
 
 ---
 
 ## 📸 Project Demonstration
+
+<!-- Add your demo GIF here once recorded, then delete this comment:
+### 🎥 Full Cycle Demo
+
+![Full Assembly Line Cycle](images/demo.gif)
+-->
 
 The following screenshots show the simulation and automated operations in sequence.
 
@@ -105,13 +138,15 @@ Robot 1 transports the processed workpiece and releases it into the collection t
 
 ![Completed Pick and Place](images/completed_pick_place.png)
 
-### 11. Second Workpiece Come for Drilling
-![Second Workpiece Come for Drilling]((images/second_workpiece.png)
+### 11. Second Workpiece Arrives for Drilling
+
+The conveyor brings the next workpiece to the drilling position and the cycle repeats.
+
+![Second Workpiece Arrives for Drilling](images/second_workpiece.png)
 
 ### 12. Second Workpiece After Drilling
 
 ![Second Workpiece After Drilling](images/second_workpiece_after_drilling.png)
-
 
 ---
 
@@ -360,3 +395,26 @@ The two-hole result is a pre-modelled STL visual that appears after Robot 2 comp
 ## 🎯 Project Objective
 
 To explore industrial automation concepts with ROS 2 and Gazebo by integrating multiple robotic workstations, conveyor systems, sensor feedback, motion control, gripper operations, and automated process coordination in a simulated manufacturing environment.
+
+---
+
+## 🔮 Future Improvements
+
+- Replace the pre-modelled two-hole visual with real material removal in simulation.
+- Integrate MoveIt 2 for collision-aware motion planning.
+- Add vision-based workpiece detection and pose estimation.
+- Extend the system to multiple workpiece types and variable hole patterns.
+- Log accuracy results over many cycles to report statistics beyond a single run.
+
+---
+
+## 👤 Author
+
+**Prachi Kale**
+GitHub: [@prachikale05](https://github.com/prachikale05)
+
+---
+
+## 📄 License
+
+This project is released under the MIT License. See the `LICENSE` file for details.
