@@ -76,6 +76,15 @@ $$
 
 ---
 
+### 🎥 Full Automated Assembly Line Demo
+
+Watch the complete simulation demonstrating the coordinated operation of both robots, sensor-based workpiece detection, two-point drilling, and automated pick-and-place.
+
+▶️ **[Watch Full Project Demonstration](automated_drilling_assembly_line_demo.mp4)**
+
+---
+
+
 ## 📸 Project Demonstration
 
 <!-- Add your demo GIF here once recorded, then delete this comment:
